@@ -1,4 +1,4 @@
-# Minimalist PostgreSQL Query Script with Node.js
+.# Minimalist PostgreSQL Query Script with Node.js
 
 ## About
 
