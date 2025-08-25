@@ -1,66 +1,56 @@
-## 📂 Project Structure
+✨ Proje Yapısı
+Bu proje, anlaşılır, bakımı kolay ve ölçeklenebilir bir yapıya sahiptir. Aşağıda, her klasör ve dosyanın ayrıntılı bir genel bakışını bulabilirsiniz.
 
-The project is organized for clarity, maintainability, and scalability.  
-Below is a detailed overview of each folder and file:
-
+📁 Dizin Ağacı
 .
-├── 📦 node_modules/ # Installed dependencies (auto-generated)
-│ ├── pg/ # PostgreSQL client library
-│ ├── dotenv/ # Loads environment variables from .env
-│ └── ... # Other npm dependencies
+├── 📦 node_modules/ # Yüklü bağımlılıklar (otomatik oluşturulur)
+│ ├── pg/ # PostgreSQL istemci kütüphanesi
+│ ├── dotenv/ # .env dosyasından ortam değişkenlerini yükler
+│ └── ... # Diğer npm bağımlılıkları
 │
-├── 🛠 .env # Environment variables (not tracked by Git)
-├── 📄 .env.exp # Example environment file for setup
-├── 📝 .gitignore # Files and directories ignored by Git
-├── ⚙️ .gitattributes # Git configuration for cross-platform compatibility
+├── 🛠 .env # Ortam değişkenleri (Git tarafından izlenmez)
+├── 📄 .env.exp # Örnek ortam dosyası
+├── 📝 .gitignore # Git tarafından göz ardı edilen dosya ve dizinler
+├── ⚙️ .gitattributes # Platformlar arası Git uyumluluğu için yapılandırma
 │
-├── 🚀 app.js # Main script:
-│ │ - Connects to PostgreSQL
-│ │ - Executes a sample SQL query
-│ │ - Handles errors gracefully
-│ │ - Logs results to console
+├── 🚀 app.js # Ana script:
+│ │ - PostgreSQL'e bağlanır
+│ │ - Örnek bir SQL sorgusu çalıştırır
+│ │ - Hataları zarifçe yönetir
+│ │ - Sonuçları konsola kaydeder
 │
-├── 📦 package.json # Project manifest:
-│ │ - Project metadata (name, version, description)
-│ │ - Scripts for running the app
-│ │ - Dependencies & devDependencies
+├── 📦 package.json # Proje manifestosu:
+│ │ - Proje meta verileri (isim, versiyon, açıklama)
+│ │ - Uygulamayı çalıştırmak için scriptler
+│ │ - Bağımlılıklar ve geliştirme bağımlılıkları
 │
-├── 🔒 package-lock.json # Locks exact dependency versions
+├── 🔒 package-lock.json # Kesin bağımlılık versiyonlarını kilitler
 │
-└── 📖 README.md # Documentation:
-│ - Installation guide
-│ - Usage examples
-│ - Feature overview
-│ - Contribution guidelines
+└── 📖 README.md # Proje belgeleri:
+│ - Kurulum kılavuzu
+│ - Kullanım örnekleri
+│ - Özelliklere genel bakış
+│ - Katkıda bulunma yönergeleri
+📌 Ayrıntılı Açıklamalar
+Dosya / Klasör	Açıklama
+📦 node_modules/	Tüm yüklü npm paketlerini içerir. Manuel olarak değiştirmeyin; bunun yerine npm install komutunu kullanın.
+🛠 .env	Veritabanı kimlik bilgileri gibi hassas ortam değişkenlerini saklar.
+📄 .env.exp	.env dosyası için bir şablon sunar; bu, geliştiricilerin ortamlarını hızla kurmalarına yardımcı olur.
+📝 .gitignore	Sürüm kontrolünden dışlanacak dosya ve klasörleri (.env, node_modules gibi) listeler.
+⚙️ .gitattributes	Farklı işletim sistemlerinde tutarlı Git davranışını (satır sonları, kodlama) sağlar.
+🚀 app.js	PostgreSQL bağlantısını, sorgu yürütmeyi ve sonuçları loglamayı yöneten ana script'tir. Yeni sorgular veya CRUD işlemleri için kolayca genişletilebilir.
+📦 package.json	Proje meta verilerini, bağımlılıkları ve npm scriptlerini yönetir.
+🔒 package-lock.json	Tüm bağımlılık versiyonlarını kesin olarak kilitleyerek farklı ortamlarda tutarlı kurulumları garanti eder.
+📖 README.md	Proje belgelerini, kullanım talimatlarını ve katkıda bulunma yönergelerini içerir.
 
-sql
-Kopyala
-Düzenle
+E-Tablolar'a aktar
+💡 En İyi Uygulamalar
+node_modules klasörünü dokunulmaz tutun — bağımlılıkları npm install ile yönetin.
 
----
+Kimlik bilgilerini versiyon kontrolüne (Git) göndermemek için hassas verileri .env dosyasında saklayın.
 
-### 📌 Detailed Description
+Yeni dosyalar eklerken (sorgular, yardımcı programlar vb.) tutarlı bir yapıyı koruyun.
 
-| File / Folder           | Description |
-|------------------------|-------------|
-| 📦 **node_modules/**    | Contains all installed npm packages. Do not modify manually; use `npm install` instead. |
-| 🛠 **.env**             | Stores sensitive environment variables such as database credentials. |
-| 📄 **.env.exp**         | Template for `.env`; useful for collaborators to quickly set up their environment. |
-| 📝 **.gitignore**       | Lists files/folders to exclude from version control (e.g., `.env`, `node_modules`). |
-| ⚙️ **.gitattributes**   | Ensures consistent Git behavior across different OS (line endings, encoding). |
-| 🚀 **app.js**           | The main script handling PostgreSQL connection, query execution, and logging. Easily extensible for new queries or CRUD operations. |
-| 📦 **package.json**     | Manages project metadata, dependencies, and npm scripts. |
-| 🔒 **package-lock.json**| Locks all dependency versions to ensure consistent installations across environments. |
-| 📖 **README.md**        | Contains project documentation, usage instructions, and contribution guidelines. |
+Tüm katkıda bulunanları aynı sayfada tutmak için yeni özellikleri README.md dosyasında belgeleyin.
 
----
-
-### 💡 Best Practices
-
-1. **Keep `node_modules` untouched** — manage dependencies via `npm install`.  
-2. **Use `.env` for sensitive data** to avoid committing credentials to version control.  
-3. **Follow consistent structure** when adding new files (e.g., queries, utilities).  
-4. **Document new features** in `README.md` to keep all contributors on the same page.  
-5. **Leverage `package-lock.json`** to prevent “works on my machine” problems.  
-
-> ✅ This structure ensures readability, maintainability, and scalability — making it easier for developers to 
+"Bende çalışıyordu" sorunlarını önlemek için package-lock.json dosyasını kullanın.
