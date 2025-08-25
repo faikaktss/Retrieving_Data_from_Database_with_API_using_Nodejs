@@ -44,13 +44,3 @@ Dosya / Klasör	Açıklama
 📖 README.md	Proje belgelerini, kullanım talimatlarını ve katkıda bulunma yönergelerini içerir.
 
 E-Tablolar'a aktar
-💡 En İyi Uygulamalar
-node_modules klasörünü dokunulmaz tutun — bağımlılıkları npm install ile yönetin.
-
-Kimlik bilgilerini versiyon kontrolüne (Git) göndermemek için hassas verileri .env dosyasında saklayın.
-
-Yeni dosyalar eklerken (sorgular, yardımcı programlar vb.) tutarlı bir yapıyı koruyun.
-
-Tüm katkıda bulunanları aynı sayfada tutmak için yeni özellikleri README.md dosyasında belgeleyin.
-
-"Bende çalışıyordu" sorunlarını önlemek için package-lock.json dosyasını kullanın.
