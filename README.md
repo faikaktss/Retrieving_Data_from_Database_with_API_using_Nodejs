@@ -1,87 +1,51 @@
-.# Minimalist PostgreSQL Query Script with Node.js
+# 🐘 Minimalist PostgreSQL Query Script with Node.js
 
-## About
+A clean and beginner-friendly project that demonstrates **how to connect to a PostgreSQL database using Node.js**.  
+It uses the [pg (node-postgres)](https://node-postgres.com/) library to handle database connections and queries, and environment variables for secure configuration.  
 
-This project is a minimalist script that demonstrates how to connect to a PostgreSQL database and execute a simple SQL `SELECT` query using **Node.js** and the **pg (Node-Postgres)** library.  
-Database connection details are securely managed through environment variables (`.env`).  
-This script can be used in larger Node.js applications.
+This project is intentionally **minimalist** — making it a great starting point for students, backend developers, or anyone learning how to integrate PostgreSQL into a Node.js application.
 
-## Features
+---
 
-- Connects to a PostgreSQL database using credentials from `.env`
-- Executes a `SELECT * FROM users` SQL query
-- Logs the retrieved data in the console
-- Gracefully handles connection and query errors
+## 📖 Table of Contents
+1. [Features](#-features)  
+2. [Technologies Used](#-technologies-used)  
+3. [Project Structure](#-project-structure)  
+4. [Getting Started](#-getting-started)  
+5. [Sample Code](#-sample-code-appjs)  
+6. [How It Works](#-how-it-works)  
+7. [Example Output](#-example-output)  
+8. [Use Cases](#-use-cases)  
+9. [Future Improvements](#-future-improvements)  
+10. [License](#-license)  
 
-## Technologies Used
+---
 
-- Node.js
-- pg (node-postgres)
-- dotenv
+## ✨ Features
 
-## Project Structure
+- 🔑 **Environment Variable Support** — Credentials managed via `.env` file for better security.  
+- 🗄️ **Database Connectivity** — Easily connect to PostgreSQL instances.  
+- 📝 **Sample Query Execution** — Executes a `SELECT * FROM users` query.  
+- 🛡 **Error Handling** — Handles both connection and query errors gracefully.  
+- 🧩 **Minimal & Extensible** — Designed as a small, readable script you can expand into a larger app.  
 
-```
+---
+
+## 🛠 Technologies Used
+
+- **Node.js** → JavaScript runtime environment  
+- **pg (node-postgres)** → PostgreSQL client for Node.js  
+- **dotenv** → Secure environment variable management  
+
+---
+
+## 📂 Project Structure
+
+```bash
 .
-├── node_modules/
-├── .env.exp
-├── .gitattributes
-├── app.js
-├── package-lock.json
-└── package.json
-```
-
-## Sample Code (app.js)
-
-```js
-const { Client } = require('pg'); // Import pg Client
-require('dotenv').config(); // Load .env file
-
-const client = new Client({
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    host: process.env.DATABASE_HOST,
-    port: process.env.DATABASE_PORT,
-    database: process.env.DATABASE_NAME
-});
-
-client.connect()
-    .then(() => {
-        console.log("Veritabanına bağlandı");
-    })
-    .catch(err => console.log("Bağlantı hatası", err));
-
-client.query('SELECT * FROM users', (err, res) => {
-    if (err) {
-        console.log('Sorgu hatası', err);
-    } else {
-        console.log(res.rows);
-    }
-    client.end();
-});
-```
-
-## Setup
-
-1. Install dependencies:
-    ```bash
-    npm install
-    ```
-
-2. Create a `.env` file with the following content:
-    ```env
-    DATABASE_USER=your_username
-    DATABASE_PASSWORD=your_password
-    DATABASE_HOST=localhost
-    DATABASE_PORT=5432
-    DATABASE_NAME=your_database
-    ```
-
-3. Run the application:
-    ```bash
-    node app.js
-    ```
-
-## License
-
-This project is open-source and free to use.
+├── node_modules/        # Installed dependencies
+├── .env.exp             # Example environment file
+├── .gitattributes       # Git configuration
+├── app.js               # Main Node.js script
+├── package-lock.json    # Auto-generated lock file
+└── package.json         # Project metadata and dependencies
